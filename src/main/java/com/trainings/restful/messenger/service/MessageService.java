@@ -33,7 +33,9 @@ public class MessageService {
 	
 	public Response getMessageWithID(long id){
 		
-		return Response.status(Status.OK).header("Access-Control-Allow-Origin", "*").entity(messages.get(id)).build();
+		return Response.status(Status.OK)
+				.header("Access-Control-Allow-Origin", "*")
+				.entity(messages.get(id)).build();
 		//return messages.get(id);
 	}
 	
@@ -55,6 +57,10 @@ public class MessageService {
 	public void deleteMessage(long id){
 		messages.remove(id);
 	
+	}
+	
+	public void deleteAllMessagees(){
+		System.out.println("Function to delete all messages: TEST");
 	}
 	
 }
